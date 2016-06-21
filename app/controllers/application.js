@@ -5,6 +5,10 @@ export default Ember.Controller.extend({
   actions: {
     createTodo(content) {
       this.get('todos').addObject(this.store.createRecord('todo', {label: content}));
+    },
+    destroyTodo(todo) {
+      this.get('todos').removeObject(todo);
+      todo.deleteRecord();
     }
   }
 });

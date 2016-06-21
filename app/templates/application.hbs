@@ -6,7 +6,7 @@
   <section class="main">
     <ul class="todo-list">
       {{#each todos as |todo|}}
-        {{todo-item label=todo.label isCompleted=todo.isCompleted}}
+        {{todo-item label=todo.label isCompleted=todo.isCompleted destroyTodo=(action 'destroyTodo' todo)}}
       {{/each}}
     </ul>
   </section>
