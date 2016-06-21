@@ -13,6 +13,9 @@
   <footer class="footer">
     <!-- This should be `0 items left` by default -->
     <span class="todo-count"><strong>{{incompleteTodos.length}}</strong> item left</span>
+    {{#if hasCompleted}}
+      <button class="clear-completed" onclick={{action 'clearCompleted'}}>Clear completed</button>
+    {{/if}}
   </footer>
 </section>
 <footer class="info">
