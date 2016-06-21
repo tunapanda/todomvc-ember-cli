@@ -1,8 +1,6 @@
-<li class="{{if isCompleted 'completed'}}">
-  <div class="view">
-    <input class="toggle" type="checkbox" onclick={{action 'toggleComplete'}}>
-    <label>{{label}}</label>
-    <button class="destroy" onclick={{action destroyTodo}}></button>
-  </div>
-  <input class="edit" value="Create a TodoMVC template">
-</li>
+<div class="view" ondblclick={{action 'editTodo'}}>
+  <input class="toggle" type="checkbox" onclick={{action 'toggleComplete'}}>
+  <label>{{label}}</label>
+  <button class="destroy" onclick={{action destroyTodo}}></button>
+</div>
+{{input class="edit" value=label focus-out=(action "doneEditing") key-down=(action (mut label)) insert-newline=(action "doneEditing")}}
