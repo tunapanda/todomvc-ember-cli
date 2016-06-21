@@ -3,6 +3,13 @@
     <h1>todos</h1>
     {{new-todo placeholder="What needs to be done?" autofocus="true" createTodo=(action 'createTodo')}}
   </header>
+  <section class="main">
+    <ul class="todo-list">
+      {{#each todos as |todo|}}
+        {{todo-item label=todo.label isCompleted=todo.isCompleted}}
+      {{/each}}
+    </ul>
+  </section>
 </section>
 <footer class="info">
   <p>Double-click to edit a todo</p>
